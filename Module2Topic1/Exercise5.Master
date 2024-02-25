@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Exercise5.Master.cs" Inherits="Module2Topic1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 2rem
+        }
+
+        #nav {
+            padding: 10px;
+        }
+
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #nav li {
+            margin: 0;
+        }
+
+        #nav a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 2px solid transparent;
+        }
+
+        #nav a:hover {
+            border-bottom: 2px solid black;
+        }
+
+        #form1 {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #footer {
+            background-color: white;            
+            padding: 10px;
+            text-align: center;
+        }
+
+        #div {
+
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise1.aspx')">Exercise 1</a></li>
+            <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise2.aspx')">Exercise 2</a></li>
+            <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise3.aspx')">Exercise 3</a></li>
+            <li><a href="javascript:void(0)" onclick="SetFrameURL('Exercise4.aspx')">Exercise 4</a></li>
+        </ul>
+    </nav>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+                <iframe id="display" width="100%" height="500px" src=" "></iframe>
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <div>
+                    <h3>REFLECTION</h3>
+                    <h4 style="text-align:left">How would you compare plain HTML to ASP.NET WebForms? </h4>
+                    <p style="text-align:left">Both differ in terms of web development, as ASP.NET includes additional applications or logics that are similar to HTML. However, it has dedicated syntaxes to execute other functionalities that HTML would require Javascript for (e.g., use of validation controls). HTML, although mostly used to create the structure and presentation of the webpage, lacks the built-in logic for certain actions, which ASP.NET provides. ASP.NET offers robust methods and tools to quickly create the framework, an interactive database, and an improved method of handling user interactions in the web application. In most cases, HTML revolves around building the website and utilizing CSS and Javascript to develop the frontend. In contrast, ASP.NET has built-in features to handle forms and inputs made by the user, providing a more streamlined process. It excels in managing databases compared to HTML. Overall, HTML is focused on the structure and presentation of the webpage, while ASP.NET extends functionality by providing additional tools and logic for dynamic web applications, including improved database handling and user interaction features.</p>
+                    <h4 style="text-align:left">The code behind (C#) and JavaScript seem to share many use cases. When should you implement logic in the code behind and when should you implement logic in JavaScript?</h4>
+                    <p style="text-align:left">Both languages serve specific roles, each focusing on different aspects of web development. C# is mainly geared towards performing operations on the server-side, making it suitable for tasks like manipulating data and handling complex logic, such as user authentication and computations. On the other hand, JavaScript is well-suited for managing interactions and providing feedback in response to user actions, like verifying required inputs before sending information to the server. In simpler terms, C# is your go-to for behind-the-scenes server work, while JavaScript is better used in making the user's experience on the webpage dynamic and responsive.</p>
+                    <h4 style="text-align:left">What are post backs?</h4>
+                    <p style="text-align:left">A postback is the process in web development where a user's interaction with a web page causes a round-trip to the server for processing. This mechanism is commonly connected with ASP.NET and involves the user completing an action, such as clicking a button or submitting a form, that transmits data back to the server. After receiving the data, the server runs server-side code, such as C# in the case of ASP.NET, to process the request, do any necessary computations, and return a response. The response, which frequently contains new HTML or data, is subsequently returned to the user's browser, updating the page without requiring a full reload. Postbacks enable dynamic and interactive web experiences by allowing server-side processing in response to user activities, but they are only one of numerous strategies utilized in modern web development, along with options such as AJAX for asynchronous updates.</p>
+                </div>
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer id="footer">
+        Copyright @ Jan Gabriel Rea 2024 - All Rights Reserved.
+    </footer>
+    <script>
+        function SetFrameURL(url) {
+            document.getElementById("display").src = url;
+        }
+    </script>
+</body>
+</html>
