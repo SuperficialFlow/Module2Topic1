@@ -47,6 +47,12 @@
         <h>Friday Pilots Club - </h><asp:CheckBox id="art5" runat="server" checkboxgroup="artists"/> <br />
         <%-- TODO 3.6 Create a FileUpload for their proof of payment. It must only accept JPG and PNG files. --%>
         <%-- Hint: https://www.tutorialspoint.com/asp.net/asp.net_file_uploading.htm#:~:text=%3Ch3%3E%20File%20Upload:%3C/h3%3E --%>
+        <h3> File Upload:</h3>
+        <br />
+        <asp:FileUpload ID="FileUpload1" accept=".jpg, .jpeg, .png" runat="server" />
+        <br /><br />
+        <asp:Button ID="btnsave" runat="server" Text="Save" style="width:85px" />
+        <br /><br />
     </form>
 </body>
 </html>
